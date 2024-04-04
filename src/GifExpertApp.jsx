@@ -7,10 +7,11 @@ export const GifExpertApp = () => {
 
     console.log( categories )
 
-    // const onAddCategory = () => {
-    //     setCategories([ ...categories, 'Dragon ball' ])
-    //     // setCategories(cat => [ ...cat, 'Dragon ball' ])
-    // }
+    const onAddCategory = ( newCategory ) => {
+   
+        setCategories([ newCategory,...categories ])
+        // setCategories(cat => [ ...cat, 'Dragon ball' ])
+    }
 
     return (
         <>
@@ -19,7 +20,10 @@ export const GifExpertApp = () => {
             <h1> GifExpertApp </h1>
 
             {/* {Input} */}
-                <AddCategory setCategories={ setCategories }/>
+                <AddCategory 
+                    // setCategories={ setCategories }
+                    onNewCategory= { value => onAddCategory( value ) }
+                />
             {/* {Gif List} */}
             {/* <button onClick={ onAddCategory }>Add</button> */}
             <ol>
